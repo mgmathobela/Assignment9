@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Assignment9.Views.InitialPage"
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="#0081B3"
+             Title="InitialPage">
+
+    <Grid RowDefinitions="Auto, *, Auto" Padding="15, 25">
+        
+        <Label Grid.Row="0" Text="Music-fy" TextColor="White" FontSize="35" FontAttributes="Bold" HorizontalOptions="Center" />
+ 
+        <Image Grid.Row="1" Source="music.png" Aspect="AspectFit" HeightRequest="250" WidthRequest="250" />
+
+        <VerticalStackLayout Grid.Row="2" Spacing="10">
+ 
+            <Label Text="The World of Good Music" TextColor="White" FontSize="20" FontAttributes="Bold"/>
+
+            <Label Text="Where you can find the dopest, coolest, Deep House Music. From local, to international artists nation, and worldwide." TextColor="White" FontSize="15" FontAttributes="None" VerticalOptions="Center" VerticalTextAlignment="Center"/>
+
+            <Button Text="Get Started" TextColor="White" FontSize="15" FontAttributes="Bold" VerticalOptions="End" HorizontalOptions="End" Clicked="NavToHome"/>
+        </VerticalStackLayout>
+
+    </Grid>
+
+</ContentPage>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Assignment9.Views.HomePage"
+             xmlns:vm="clr-namespace:Assignment9.ViewModels"
+             x:DataType="vm:HomeViewModel"
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="#FFFFFF"
+             Title="HomePage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        
+        <!-- header -->
+        <Frame Grid.Row="0" Grid.Column="0" BackgroundColor="#0081B3" BorderColor="Transparent" CornerRadius="0" Margin="0" Padding="5">
+            <HorizontalStackLayout  Padding="10">
+                <Image Aspect="AspectFit" Source="music.png" HeightRequest="50" WidthRequest="50" HorizontalOptions="StartAndExpand" />
+                <Label Text="Music-fy" TextColor="#FFFFFF" FontSize="20" VerticalOptions="Center" />
+            </HorizontalStackLayout>
+        </Frame>
+
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout Spacing="10" Padding="5">
+                <HorizontalStackLayout Padding="5">
+                    <Image Source="profile_tab.png" HeightRequest="50" WidthRequest="50" HorizontalOptions="StartAndExpand" />
+                    <Label Text="Hello" TextColor="#000000" FontSize="20" VerticalOptions="Center" />
+                    <Label Text="," TextColor="#0081B3" FontSize="20" VerticalOptions="Center" />
+                    <Label Text="Mokgadi Given" TextColor="#000000" FontSize="20" VerticalOptions="Center" Margin="5"/>
+                    <Label Text="Mathobela" TextColor="#000000" FontSize="20" VerticalOptions="Center" Margin="1"/>
+                </HorizontalStackLayout>
+
+                <Label Text="What would you like to listen to today?" TextColor="#0081B3" FontAttributes="Bold" FontSize="20" />
+
+                <Label Text="Music Catalog" TextColor="#000000" FontAttributes="Bold" FontSize="15" />
+
+                <CollectionView ItemsSource="{Binding Items}">
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout Orientation="Vertical" HorizontalItemSpacing="15" VerticalItemSpacing="15" Span="2">
+                        </GridItemsLayout>
+                    </CollectionView.ItemsLayout>
+
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Border BackgroundColor="#0081B3" StrokeThickness="0" StrokeShape="RoundRectanahle 10">
+                                <Grid RowDefinitions="*, Auto, Auto">
+                                    <Image Grid.Row="0" Aspect="AspectFill" Source="{Binding Album}" HeightRequest="200" />
+                                    <Label Grid.Row="1" Text="{Binding Title}" TextColor="#FFFFFF" FontAttributes="Bold" FontSize="15" HorizontalTextAlignment="Center" HorizontalOptions="Center" />
+                                    <Label Grid.Row="2" Text="{Binding Artist}" FontSize="10" TextColor="DarkGray" />
+                                    <Label Grid.Row="3" Text="{Binding Price, StringFormat='Price: {0:C}'}" FontSize="10" TextColor="#FFFFFF" />
+                                    <Button Grid.Row="4" Text="Add to Cart" TextColor="#FFFFFF" Command="{Binding AddToCartCMD}" />
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>

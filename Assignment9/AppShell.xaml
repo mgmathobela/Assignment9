@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="Assignment9.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:v="clr-namespace:Assignment9.Views"
+    Shell.ForegroundColor="White"
+    Shell.BackgroundColor="#0081B3"
+    Shell.TabBarBackgroundColor="#0081B3"
+    Shell.TitleColor="White"
+    Shell.FlyoutBehavior="Disabled"
+    Title="Assignment9">
+
+    <!-- initial_page 
+    <ShellContent Route="InitialPage" ContentTemplate="{DataTemplate v:InitialPage}"/> -->
+
+    <!-- tab_bar -->
+    <TabBar>
+        <!-- home_tab -->
+        <Tab Title="Home" Icon="home_tab.png">
+            <ShellContent Route="HomePage" ContentTemplate="{DataTemplate v:HomePage}"/>
+        </Tab>
+        <!-- cart_tab -->
+        <Tab Title="Cart" Icon="cart_tab.png">
+            <ShellContent Route="ShoppingPage" ContentTemplate="{DataTemplate v:ShoppingPage}"/>
+        </Tab>
+        <!-- profile_tab -->
+        <Tab Title="Profile" Icon="profile_tab.png">
+            <ShellContent  Route="ProfilePage" ContentTemplate="{DataTemplate v:ProfilePage}"/>
+        </Tab>
+    </TabBar>
+
+</Shell>

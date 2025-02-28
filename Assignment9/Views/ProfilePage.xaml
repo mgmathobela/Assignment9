@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:Assignment9.ViewModels"
+             x:Class="Assignment9.Views.ProfilePage"
+             BackgroundColor="#FFFFFF"
+             Title="Profile">
+
+    <!-- binding -->
+    <ContentPage.BindingContext>
+        <vm:ProfileViewModel />
+    </ContentPage.BindingContext>
+    
+    <StackLayout Padding="20">
+        <Label Text="Name" />
+        <Entry Text="{Binding Profile.Name}" x:Name="NameEntry" Placeholder="Enter your name" />
+        <Label Text="Surname" />
+        <Entry Text="{Binding Profile.Surname}"  x:Name="SurnameEntry" Placeholder="Enter your surname" />
+        <Label Text="Email Address" />
+        <Entry Text="{Binding Profile.EmailAddress}" x:Name="EmailEntry" Placeholder="Enter your email" />
+        <Label Text="Bio" />
+        <Editor Text="{Binding Profile.Bio}" x:Name="BioEditor" Placeholder="Enter your bio" />
+        <Button Text="Save" Command="{Binding OnSaveCMD}" />
+    </StackLayout>
+
+</ContentPage>
